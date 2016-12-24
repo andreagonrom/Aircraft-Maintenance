@@ -1,0 +1,23 @@
+struct avio{
+    string codi;
+    int model;
+    temps hores;
+    string estat;
+    temps data_entrada;
+    temps data_sortida;
+    double preu;
+    identificacio tecnic;
+};
+struct temps{
+    int dia;
+    int mes;
+    int any;
+    int hores;
+    int min;
+    int segons;
+};
+struct identificacio{
+    string nom;
+    string cognom;
+    int DNI;
+};
