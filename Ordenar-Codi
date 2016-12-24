@@ -1,0 +1,21 @@
+void ordenar_per_codi(avio tAvions[dim], int N){
+    bool acabar=false;
+    int pasada=0,nIntercanvis;
+    while(pasada<N-1 && !acabar){
+         nIntercanvis=0;
+         for(int j=0;j<N-pasada-1;j++){
+            if(tAvions[j].codi>tAvions[j+1].codi){
+              nIntercanvis++;
+              intercanviar(tAvions,j,j+1);
+            }
+         }if(nIntercanvis==0){
+            acabar=true;
+         }else{
+            pasada++;
+         }
+    }
+}void intercanviar(avio tAvions[dim],int i,int j){
+     avio aux=tAvions[i];
+     tAvions[i]=tAvions[j];
+     tAvions[j]=aux;
+}
