@@ -1,7 +1,7 @@
 struct avio{
     string codi;
     int model;
-    temps hores;
+    int hores_vol;
     string estat;
     temps data_entrada;
     temps data_sortida;
