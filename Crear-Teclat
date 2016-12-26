@@ -1,4 +1,6 @@
 void crear_per_teclat(avio tAvions[N],int& dim){
+   struct tm *info_temps=tAvions[i].data_entrada;
+	int dia,mes,any,hora,minuts,segons;
    if(dim==24){
       cout<<"Angar ple."<<endl;
    }else{
@@ -12,12 +14,7 @@ void crear_per_teclat(avio tAvions[N],int& dim){
       cout<<"Estat del manteniment de l'avio: ";
       cin>>tAvions[dim].estat;
       cout<<"Data d'entrada de l'avio: ";
-      cin>>tAvions[dim].data_entrada.dia;
-      cin>>tAvions[dim].data_entrada.mes;
-      cin>>tAvions[dim].data_entrada.any;
-      cin>>tAvions[dim].data_entrada.hores;
-      cin>>tAvions[dim].data_entrada.min;
-      cin>>tAvions[dim].data_entrada.segons;
+      temps(info_temps,dia,mes,any,hora,minuts,segons);  //Data del sistema
       cout<<"Data de sortida de l'avio: ";
       cin>>tAvions[dim].data_sortida.dia;
       cin>>tAvions[dim].data_sortida.mes;
@@ -32,6 +29,5 @@ void crear_per_teclat(avio tAvions[N],int& dim){
       cin>>tAvions[dim].tecnic.cognom;
       cin>>tAvions[dim].tecnic.DNI;
       cout<<endl;
-      dim++;
-   }
+   }dim++;
 }
