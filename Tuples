@@ -3,8 +3,8 @@ struct avio{
     string model;
     int hores_vol;
     string estat;
-    temps data_entrada;
-    temps data_sortida;
+    tm data_entrada;   //Data automàtica d'entrada de la informació en el sistema
+    temps data_sortida;  //Data de sortida prevista
     double preu;
     identificacio tecnic;
 };
@@ -12,9 +12,14 @@ struct temps{
     int dia;
     int mes;
     int any;
-    int hores;
-    int min;
-    int segons;
+};
+struct tm{
+    int tm_sec;  //0-59
+    int tm_min;  //0-59
+    int tm_hour;  //0-23
+    int tm_mday;  //1-31
+    int tm_mon;  //0-11
+    int tm_year;  //desde 1900
 };
 struct identificacio{
     string nom;
