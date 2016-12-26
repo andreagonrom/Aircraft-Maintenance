@@ -1,1 +1,11 @@
-void temps(
+void temps(struct tm *info,int& dia,int& mes,int& any,int& hora,int& minuts,int& segons){
+     time_t t;
+     time(&t);
+     info=localtime(&t);
+     dia=info->tm_mday;
+     mes=info->tm_mon;
+     any=1900+info->tm_year;
+     hora=info->tm_hour;
+     minuts=info->tm_min;
+     segons=info->tm_sec;
+}
