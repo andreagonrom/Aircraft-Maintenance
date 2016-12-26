@@ -1,33 +1,34 @@
-void crear_per_teclat(avio tAvions[N],int& dim){
-   struct tm *info_temps=tAvions[i].data_entrada;
+void crear_per_teclat(avio a[N],int& dim){
+   struct tm *info_temps=a[i].data_entrada;
 	int dia,mes,any,hora,minuts,segons;
    if(dim==24){
       cout<<"Angar ple."<<endl;
    }else{
       cout<<"Dades de l'avio."<<endl;
       cout<<"Codi de l'avio: ";
-      cin>>tAvions[dim].codi;
+      cin>>a[dim].codi;
       cout<<"Model de l'avio: ";
-      cin>>tAvions[dim].model;
+      cin>>a[dim].model;
       cout<<"Hores de vol de l'avio: ";
-      cin>>tAvions[dim].hores_vol;
+      cin>>a[dim].hores_vol;
       cout<<"Estat del manteniment de l'avio: ";
-      cin>>tAvions[dim].estat;
+      cin>>a[dim].estat;
       cout<<"Data d'entrada de l'avio: ";
       temps(info_temps,dia,mes,any,hora,minuts,segons);  //Data del sistema
       cout<<"Data de sortida de l'avio: ";
-      cin>>tAvions[dim].data_sortida.dia;
-      cin>>tAvions[dim].data_sortida.mes;
-      cin>>tAvions[dim].data_sortida.any;
-      cin>>tAvions[dim].data_sortida.hores;
-      cin>>tAvions[dim].data_sortida.min;
-      cin>>tAvions[dim].data_sortida.segons;
+      cin>>a[dim].data_sortida.dia;
+      cin>>a[dim].data_sortida.mes;
+      cin>>a[dim].data_sortida.any;
+      cin>>a[dim].data_sortida.hores;
+      cin>>a[dim].data_sortida.min;
+      cin>>a[dim].data_sortida.segons;
       cout<<"Preu del manteniment de l'avio: ";
-      cin>>tAvions[dim].preu;
+      cin>>a[dim].preu;
       cout<<"Tecnic responsable de l'avio: ";
-      cin>>tAvions[dim].tecnic.nom;
-      cin>>tAvions[dim].tecnic.cognom;
-      cin>>tAvions[dim].tecnic.DNI;
+      cin>>a[dim].tecnic.nom;
+      cin>>a[dim].tecnic.cognom;
+      cin>>a[dim].tecnic.DNI;
       cout<<endl;
-   }dim++;
+      dim++;
+   }
 }
