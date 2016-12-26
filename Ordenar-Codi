@@ -1,21 +1,24 @@
-void ordenar_per_codi(avio tAvions[dim], int N){
-    bool acabar=false;
-    int pasada=0,nIntercanvis;
-    while(pasada<N-1 && !acabar){
-         nIntercanvis=0;
-         for(int j=0;j<N-pasada-1;j++){
-            if(tAvions[j].codi>tAvions[j+1].codi){
-              nIntercanvis++;
-              intercanviar(tAvions,j,j+1);
-            }
-         }if(nIntercanvis==0){
-            acabar=true;
-         }else{
-            pasada++;
-         }
-    }
-}void intercanviar(avio tAvions[dim],int i,int j){
+void intercanviar(avio tAvions[N],int i,int j){
      avio aux=tAvions[i];
      tAvions[i]=tAvions[j];
      tAvions[j]=aux;
+}int pos_min(avio tAvions[N],int dim,int k){
+     int pos=k;
+     for(int j=k+1;j<dim;j++){
+        if(tAvions[j].codi<tAvions[pos].codi){
+          pos=j;
+        }
+     }return pos;
+}void ordenar_per_codi(avio tAvions[N],int dim){
+      int pos;
+      for(int i=0;i<dim-1;i++){
+         pos=pos_min(tAvions,dim,i);
+         if(tAvions[pos].codi<tAvions[i].codi){
+           intercanviar(tAvions,i,pos);
+         }
+      }
+}void imprimir_taula_ordenada_per_codi(avio tAvions[N],int dim){
+      for(int i=0;i<dim;i++){
+         cout<<tAvions[i].codi<<' ';
+      }cout<<endl;
 }
