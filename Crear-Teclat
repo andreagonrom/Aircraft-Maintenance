@@ -1,40 +1,37 @@
-void crear_per_teclat(avio tAvions[dim],int& N){
-    i=0;
-    cout<<"Nombre d'avions a introduir (maxim 25): ";
-    cin>>N;
-    while(N>dim){
-      cout<<"Nombre d'avions excessiu."<<endl;
-      cout<<"Torna a introduir un nombre d'avions:";
-      cin>>N;
-    while(i<N){
-        cout<<"Codi de l'avio: ";
-        cin>>tAvions[i].codi;
-        cout<<"Model de l'avio: ";
-        cin>>tAvions[i].model;
-        cout<<"Hores de vol de l'avio: ";
-        cin>>tAvions[i].hores_vol;
-        cout<<"Estat del manteniment de l'avio: ";
-        cin>>tAvions[i].estat;
-        cout<<"Data d'entrada de l'avio: ";
-        cin>>tAvions[i].data_entrada.dia;
-        cin>>tAvions[i].data_entrada.mes;
-        cin>>tAvions[i].data_entrada.any;
-        cin>>tAvions[i].data_entrada.hores;
-        cin>>tAvions[i].data_entrada.min;
-        cin>>tAvions[i].data_entrada.segons;
-        cout<<"Data de sortida de l'avio: ";
-        cin>>tAvions[i].data_sortida.dia;
-        cin>>tAvions[i].data_sortida.mes;
-        cin>>tAvions[i].data_sortida.any;
-        cin>>tAvions[i].data_sortida.hores;
-        cin>>tAvions[i].data_sortida.min;
-        cin>>tAvions[i].data_sortida.segons;
-        cout<<"Preu del manteniment de l'avio: ";
-        cin>>tAvions[i].preu;
-        cout<<"Tecnic responsable de l'avio: ";
-        cin>>tAvions[i].tecnic.nom;
-        cin>>tAvions[i].tecnic.cognom;
-        cin>>tAvions[i].tecnic.DNI;
-        i++;
-    }
+void crear_per_teclat(avio tAvions[N],int& i){
+   if(i==24){
+      cout<<"Angar ple."<<endl;
+   }else{
+      cout<<"Dades de l'avio."<<endl;
+      cout<<"Codi de l'avio: ";
+      cin>>tAvions[i].codi;
+      cout<<"Model de l'avio: ";
+      cin>>tAvions[i].model;
+      cout<<"Hores de vol de l'avio: ";
+      cin>>tAvions[i].hores_vol;
+      cout<<"Estat del manteniment de l'avio: ";
+      cin>>tAvions[i].estat;
+      cout<<"Data d'entrada de l'avio: ";
+      cin>>tAvions[i].data_entrada.dia;
+      cin>>tAvions[i].data_entrada.mes;
+      cin>>tAvions[i].data_entrada.any;
+      cin>>tAvions[i].data_entrada.hores;
+      cin>>tAvions[i].data_entrada.min;
+      cin>>tAvions[i].data_entrada.segons;
+      cout<<"Data de sortida de l'avio: ";
+      cin>>tAvions[i].data_sortida.dia;
+      cin>>tAvions[i].data_sortida.mes;
+      cin>>tAvions[i].data_sortida.any;
+      cin>>tAvions[i].data_sortida.hores;
+      cin>>tAvions[i].data_sortida.min;
+      cin>>tAvions[i].data_sortida.segons;
+      cout<<"Preu del manteniment de l'avio: ";
+      cin>>tAvions[i].preu;
+      cout<<"Tecnic responsable de l'avio: ";
+      cin>>tAvions[i].tecnic.nom;
+      cin>>tAvions[i].tecnic.cognom;
+      cin>>tAvions[i].tecnic.DNI;
+      cout<<endl;
+      i++;
+   }
 }
