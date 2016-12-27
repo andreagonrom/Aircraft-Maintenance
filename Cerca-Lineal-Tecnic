@@ -1,7 +1,12 @@
-void cerca_lineal_tecnic(avio a[N],int dim,string x,string y){
+void cerca_lineal_tecnic(avio a[N],int dim,string x,string y,int& index){
+     int compt=0,index;
      for(int i=0;i<dim;i++){
         if(a[i].tecnic.nom==x && a[i].tecnic.cognom==y){
           imprimir_informacio(a,dim,i);
+          index=i;
+          compt++;
         }
+     }if(compt==0){
+        cout<<"Model d'avio no trobat."<<endl;
      }
 }
