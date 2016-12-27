@@ -1,0 +1,14 @@
+void estadistiques_tecnic(avio a[N],int dim,string x,string y){
+      double compt=0.0,estat=0.0;
+      int suma=0;
+      for(int i=0;i<dim;i++){
+         if(a[i].tecnic.nom==x && a[i].tecnic.cognom==y){
+           if(a[i].estat=="realitzat"){
+             estat++;
+           }suma+=a[i].hores_vol;
+           compt++;
+         }
+      }cout<<"Percentatge d'avions de tecnic "<<x<<' '<<y<<": "<<(compt/(double)dim)*100.0<<" %"<<endl;
+      cout<<"Percentatge d'avions de tecnic "<<x<<' '<<y<<" amb manteniment realitzat: "<<(estat/compt)*100.0<<" %"<<endl;
+      cout<<"Mitjana d'hores de vol d'avions de tecnic "<<x<<' '<<y<<": "<<suma/(int)compt<<endl;
+}  
