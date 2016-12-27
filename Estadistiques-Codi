@@ -1,0 +1,16 @@
+void estadistiques_codi(avio a[N],int dim,int index){
+      double compt1=0.0,compt2=0.0,estat=0.0;
+      int suma=0;
+      for(int i=0;i<dim;i++){
+         if(a[i].model==a[index].model){
+           compt1++;
+         }else if(a[i].tecnic.nom==a[index].tecnic.nom && a[i].tecnic.cognom==a[index].tecnic.cognom){
+              compt2++;
+         }else if(a[i].estat=="realitzat"){
+              estat++;
+         }suma+=a[i].hores_vol;
+      }cout<<"Percentatge d'avions de model "<<a[index].model<<": "<<(compt1/(double)dim)*100.0<<" %"<<endl;
+      cout<<"Percentatge d'avions de tecnic "<<a[index].tecnic.nom<<' '<<a[index].tecnic.cognom<<": "<<(compt2/(double)dim)*100.0<<" %"<<endl;
+      cout<<"Percentatge d'avions amb manteniment realitzat: "<<(estat/(double)dim)*100.0<<" %"<<endl;
+      cout<<"Mitjana d'hores de vol dels avions de l'angar: "<<suma/dim<<endl;
+}  
