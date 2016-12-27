@@ -2,7 +2,7 @@ void intercanviar(avio a[N],int i,int j){
      avio aux=a[i];
      a[i]=a[j];
      a[j]=aux;
-}int pos_min(avio a[N],int dim,int k){
+}int pos_min_codi(avio a[N],int dim,int k){
      int pos=k;
      for(int j=k+1;j<dim;j++){
         if(a[j].codi<a[pos].codi){
