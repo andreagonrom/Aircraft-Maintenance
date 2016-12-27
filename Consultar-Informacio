@@ -22,17 +22,29 @@ void consultar_informacio(avio a[N],int dim){
                      cout<<"Codi d'avio no trobat."<<endl;
                    }else{
                      imprimir_informacio(a,dim,index);
-                   break;
+                   }cout<<"Desitja que es mostrin les estadístiques? (0 no/1 si)";
+                   cin>>mostrar;
+                   if(mostrar){
+                     estadistiques(a,dim,index);
+                   }break;
                 case 2:
                    cout<<"Model a cercar: ";
                    cin>>model_a_cercar;
-                   cerca_lineal_model(a,dim,model_a_cercar);
-                   break;
+                   cerca_lineal_model(a,dim,model_a_cercar,index);
+                   cout<<"Desitja que es mostrin les estadístiques? (0 no/1 si)";
+                   cin>>mostrar;
+                   if(mostrar){
+                     estadistiques(a,dim,index);
+                   }break;
                 case 3:
                    cout<<"Tecnic a cercar: ";
                    cin>>nom_a_cercar>>cognom_a_cercar;
-                   cerca_lineal_tecnic(a,dim,nom_a_cercar,cognom_a_cercar);
-                   break;
+                   cerca_lineal_tecnic(a,dim,nom_a_cercar,cognom_a_cercar,index);
+                   cout<<"Desitja que es mostrin les estadístiques? (0 no/1 si)";
+                   cin>>mostrar;
+                   if(mostrar){
+                     estadistiques(a,dim,index);
+                   }break;
                 case 0:
                    cout<<"Operacio finalitzada."<<endl;
                    break;
