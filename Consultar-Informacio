@@ -15,22 +15,23 @@ void consultar_informacio(avio a[N],int dim){
           cout<<endl;
           switch(camp){
                 case 1:
-                   ordenar_per_codi(tAvions,dim);
                    cout<<"Codi a cercar: ";
                    cin>>codi_a_cercar;
                    index=cerca_dicotomica_codi(tAvions,dim,codi_a_cercar);
+                   if(index==-1){
+                     cout<<"Codi d'avio no trobat."<<endl;
+                   }else{
+                     imprimir_informacio(tAvions,dim,index);
                    break;
                 case 2:
-                   ordenar_per_model(tAvions,dim);
                    cout<<"Model a cercar: ";
                    cin>>model_a_cercar;
-                   index=cerca_dicotomica_model(tAvions,dim,model_a_cercar);
+                   cerca_lineal_model(tAvions,dim,model_a_cercar);
                    break;
                 case 3:
-                   ordenar_per_tecnic(tAvions,dim);
                    cout<<"Tecnic a cercar: ";
                    cin>>nom_a_cercar>>cognom_a_cercar;
-                   index=cerca_dicotomica_tecnic(tAvions,dim,nom_a_cercar,cognom_a_cercar);
+                   cerca_lineal_tecnic(tAvions,dim,nom_a_cercar,cognom_a_cercar);
                    break;
                 case 0:
                    cout<<"Operacio finalitzada."<<endl;
