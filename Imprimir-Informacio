@@ -1,0 +1,12 @@
+void imprimir_informacio(avio a[N],int dim,int i){
+     cout<<"Dades de l'avio."<<endl;
+     cout<<"Codi: "<<a[i].codi<<endl;
+     cout<<"Model: "<<a[i].model<<endl;
+     cout<<"Hores de vol: "<<a[i].hores_vol<<endl;
+     cout<<"Estat del manteniment: "<<a[i].estat<<endl;
+     cout<<"Data entrada: "<<a[i].data_entrada.tm_mday<<'/'<<a[i].data_entrada.tm_mon<<'/'<<a[i].data_entrada.tm_year<<' ';
+     cout<<a[i].data_entrada.tm_hour<<" h "<<a[i].data_entrada.tm_min<<" min "<<a[i].data_entrada.tm_sec<<" s."<<endl;
+     cout<<"Data sortida: "<<a[i].data_sortida.dia<<'/'<<a[i].data_sortida.mes<<'/'<<a[i].data_sortida.any<<endl;
+     cout<<"Preu: "<<a[i].preu<<" €"<<endl;
+     cout<<"Tecnic responsable: "<<a[i].tecnic.nom<<' '<<a[i].tecnic.cognom<<' '<<a[i].tecnic.DNI<<endl;
+}
