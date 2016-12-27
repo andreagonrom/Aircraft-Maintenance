@@ -34,7 +34,7 @@ void consultar_informacio(avio a[N],int dim){
                    cout<<"Desitja que es mostrin les estadístiques? (0 no/1 si)";
                    cin>>mostrar;
                    if(mostrar){
-                     estadistiques(a,dim,index);
+                     estadistiques(a,dim,model_a_cercar);
                    }break;
                 case 3:
                    cout<<"Tecnic a cercar: ";
@@ -43,7 +43,7 @@ void consultar_informacio(avio a[N],int dim){
                    cout<<"Desitja que es mostrin les estadístiques? (0 no/1 si)";
                    cin>>mostrar;
                    if(mostrar){
-                     estadistiques(a,dim,index);
+                     estadistiques(a,dim,nom_a_cercar,cognom_a_cercar);
                    }break;
                 case 0:
                    cout<<"Operacio finalitzada."<<endl;
