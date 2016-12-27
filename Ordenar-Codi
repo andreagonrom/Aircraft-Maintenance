@@ -17,7 +17,7 @@ void intercanviar(avio a[N],int i,int j){
            intercanviar(a,i,pos);
          }
       }
-}void imprimir_taula_ordenada_per_codi(avio a[N],int dim){
+}void imprimir_taula_ordenada_per_codi(avio a[N],int dim){  //Comprovar que la taula s'ordena correctament
       for(int i=0;i<dim;i++){
          cout<<a[i].codi<<' ';
       }cout<<endl;
