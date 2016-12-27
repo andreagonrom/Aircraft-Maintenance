@@ -1,0 +1,36 @@
+char opcio='A';
+while(opcio!='X'){
+     system("cls");
+     cout<<"Menu d'operacions."<<endl;
+     cout<<"A. Afegir informacio d'un avio."endl;
+     cout<<"B. Modificar informacio d'un avio."<<endl;
+     cout<<"C. Eliminar informacio d'un avio."<<endl;
+     cout<<"D. Consultar informacio d'un avio."<<endl;
+     cout<<"E. Consultar informacio dels avions amb manteniment realitzat."<<endl;  //Taula API
+     cout<<"X. Sortir."<<endl;
+     cout<<endl;
+     cout<<"Escull una opcio: ";
+     cin>>opcio;
+     switch(opcio){
+           case 'A':
+               crear_per_teclat(tAvions,dim);
+               break;
+           case 'B':
+               modificar(tAvions,dim);
+               break;
+           case 'C':
+               eliminar(tAvions,dim);
+               break;
+           case 'D':
+               consultar_informacio(tAvions,dim);
+               break;
+           case 'E':
+               consultar_API(tAvions,cap);
+               break;
+           case 'X':
+               cout<<"Operacio finalitzada."<<endl;
+           default:
+               cout<<"Opcio inexistent."<<endl;
+               cout<<"Torna a intorduir una opcio."<<endl;
+     }system("pause");
+}
