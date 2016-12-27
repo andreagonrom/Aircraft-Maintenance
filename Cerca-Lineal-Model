@@ -1,7 +1,11 @@
 void cerca_lineal_model(avio a[N],int dim,string x){
+    int compt=0;
     for(int i=0;i<dim;i++){
        if(a[i].model==x){
+         compt++;
          imprimir_informacio(a,dim,i);
        }
+    }if(compt==0){
+       cout<<"Model d'avio no trobat."<<endl;
     }
 }
