@@ -1,12 +1,13 @@
 void consultar_informacio(avio a[N],int dim){
-     int camp=1;
+     int camp=1,index;
+     string codi_a_cercar,model_a_cercar,nom_a_cercar,cognom_a_cercar;
      bool mostrar;
      while(camp!=0){
           system("cls");
           cout<<"Menu de camps a consultar."<<endl;
           cout<<"1. Codi de l'avio."<<endl;
-          cout<<"2. Tecnic responsable."<<endl;
-          cout<<"3. Model d'avio."<<endl;
+          cout<<"2. Model d'avio."<<endl;
+          cout<<"3. Tecnic responsable."<<endl;
           cout<<"0. Sortir."<<endl;
           cout<<endl;
           cout<<"Escull un camp: ";
@@ -15,12 +16,21 @@ void consultar_informacio(avio a[N],int dim){
           switch(camp){
                 case 1:
                    ordenar_per_codi(tAvions,dim);
+                   cout<<"Codi a cercar: ";
+                   cin>>codi_a_cercar;
+                   index=cerca_dicotomica(tAvions,dim,codi_a_cercar);
                    break;
                 case 2:
-                   ordenar_per_tecnic(tAvions,dim);
+                   ordenar_per_model(tAvions,dim);
+                   cout<<"Model a cercar: ";
+                   cin>>model_a_cercar;
+                   index=cerca_dicotomica(tAvions,dim,model_a_cercar);
                    break;
                 case 3:
-                   ordenar_per_model(tAvions,dim);
+                   ordenar_per_tecnic(tAvions,dim);
+                   cout<<"Tecnic a cercar: ";
+                   cin>>nom_a_cercar>>cognom_a_cercar;
+                   index=cerca_dicotomica_tecnic(tAvions,dim,nom_a_cercar,cognom_a_cercar);
                    break;
                 case 0:
                    cout<<"Operacio finalitzada."<<endl;
