@@ -1,0 +1,33 @@
+void consultar_informacio(avio a[N],int dim){
+     int camp=1;
+     bool mostrar;
+     while(camp!=0){
+          system("cls");
+          cout<<"Menu de camps a consultar."<<endl;
+          cout<<"1. Codi de l'avio."<<endl;
+          cout<<"2. Tecnic responsable."<<endl;
+          cout<<"3. Model d'avio."<<endl;
+          cout<<"0. Sortir."<<endl;
+          cout<<endl;
+          cout<<"Escull un camp: ";
+          cin>>camp;
+          cout<<endl;
+          switch(camp){
+                case 1:
+                   ordenar_per_codi(tAvions,dim);
+                   break;
+                case 2:
+                   ordenar_per_tecnic(tAvions,dim);
+                   break;
+                case 3:
+                   ordenar_per_model(tAvions,dim);
+                   break;
+                case 0:
+                   cout<<"Operacio finalitzada."<<endl;
+                   break;
+                default:
+                   cout<<"Camp inexistent."<<endl;
+                   cout<<"Torna a introduir un camp."<<endl;
+          }system("pause");
+     }
+}
