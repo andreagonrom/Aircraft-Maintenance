@@ -1,0 +1,7 @@
+void cerca_lineal_tecnic(avio a[N],int dim,string x,string y){
+     for(int i=0;i<dim;i++){
+        if(a[i].tecnic.nom==x && a[i].tecnic.cognom==y){
+          imprimir_informacio(a,dim,i);
+        }
+     }
+}
