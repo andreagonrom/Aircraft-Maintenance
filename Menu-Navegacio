@@ -14,6 +14,7 @@ while(opcio!='X'){
      switch(opcio){
            case 'A':
                crear_per_teclat(tAvions,dim);
+               ordenar_per_codi(tAvions,dim);
                break;
            case 'B':
                modificar(tAvions,dim);
