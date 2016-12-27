@@ -17,7 +17,7 @@ int pos_min_tecnic(avio a[N],int dim,int k){
            }
          }
       }
-}void imprimir_taula_ordenada_per_codi(avio a[N],int dim){  //Comprovar que la taula s'ordena correctament
+}void imprimir_taula_ordenada_per_tecnic(avio a[N],int dim){  //Comprovar que la taula s'ordena correctament
       for(int i=0;i<dim;i++){
          cout<<a[i].tecnic.nom<<' 'a[i].tecnic.cognom<<' '<<a[i].tecnic.DNI<<endl;
       }cout<<endl;
