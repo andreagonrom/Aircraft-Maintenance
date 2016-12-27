@@ -1,8 +1,8 @@
-void actualitzar_API(avio a[N],avio API[N],int i,int& cap){
-     struct tm *info_temps=API[cap].data;
+void actualitzar_API(avio a[N],APIavio A[N],int i,int& cap){
+     struct tm *info_temps=A[cap].data;
      int dia,mes,any,hora,minuts,segons;
-     API[cap].codi==a[i].codi;
-     API[cap].model==a[i].model;
+     A[cap].codi==a[i].codi;
+     A[cap].model==a[i].model;
      temps(info_temps,dia,mes,any,hora,minuts,segons);
      cap++;  //Dimensió de la taula API
 }
