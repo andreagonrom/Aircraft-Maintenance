@@ -1,24 +1,24 @@
-void intercanviar(avio a[N],int i,int j){
-     avio aux=a[i];
-     a[i]=a[j];
-     a[j]=aux;
-}int pos_min(avio a[N],int dim,int k){
-     int pos=k;
-     for(int j=k+1;j<dim;j++){
-        if(a[j].tecnic<a[pos].tecnic){
-          pos=j;
-        }
-     }return pos;
+int pos_min_tecnic(avio a[N],int dim,int k){
+    int pos=k;
+    for(int j=k+1;j<dim;j++){
+       if(a[j].tecnic.cognom<a[pos].tecnic.cognom){
+         pos=j;
+       }
+    }return pos;
 }void ordenar_per_tecnic(avio a[N],int dim){
       int pos;
       for(int i=0;i<dim-1;i++){
          pos=pos_min(a,dim,i);
-         if(a[pos].tecnic<a[i].tecnic){
+         if(a[pos].tecnic.cognom<a[i].tecnic.cognom){
            intercanviar(a,i,pos);
+         }else if(a[pos].tecnic.cognom==a[i].tecnic.cognom){
+           if(a[pos].tecnic.nom<a[pos].tecnic.nom){
+             intercanviar(a,i,pos);
+           }
          }
       }
 }void imprimir_taula_ordenada_per_codi(avio a[N],int dim){  //Comprovar que la taula s'ordena correctament
       for(int i=0;i<dim;i++){
-         cout<<a[i].tecnic<<' ';
+         cout<<a[i].tecnic.nom<<' 'a[i].tecnic.cognom<<' '<<a[i].tecnic.DNI<<endl;
       }cout<<endl;
 }
