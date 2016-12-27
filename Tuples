@@ -8,6 +8,11 @@ struct avio{
     double preu;
     identificacio tecnic;
 };
+struct APIavio{
+    string codi;
+    string model;
+    tm data;
+};
 struct temps{
     int dia;
     int mes;
