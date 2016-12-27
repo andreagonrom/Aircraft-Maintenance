@@ -1,7 +1,7 @@
 void crear_per_teclat(avio a[N],int& dim){
    struct tm *info_temps=a[i].data_entrada;
 	int dia,mes,any,hora,minuts,segons;
-   if(dim==24){
+   if(dim==25){
       cout<<"Angar ple."<<endl;
    }else{
       cout<<"Dades de l'avio."<<endl;
