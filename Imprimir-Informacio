@@ -9,4 +9,5 @@ void imprimir_informacio(avio a[N],int dim,int i){
      cout<<"Data sortida: "<<a[i].data_sortida.dia<<'/'<<a[i].data_sortida.mes<<'/'<<a[i].data_sortida.any<<endl;
      cout<<"Preu: "<<a[i].preu<<" €"<<endl;
      cout<<"Tecnic responsable: "<<a[i].tecnic.nom<<' '<<a[i].tecnic.cognom<<' '<<a[i].tecnic.DNI<<endl;
+     cout<<endl;
 }
