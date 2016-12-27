@@ -1,0 +1,9 @@
+void consultar_API(APIavio A[N],int cap){
+    for(int i=0;i<cap;i++){
+       cout<<"Dades avio amb manteniment realitzat."<<endl;
+       cout<<"Codi de l'avio: "<<A[i].codi<<endl;
+       cout<<"Model de l'avio: "<<A[i].model<<endl;
+       cout<<"Dada: "<<A[i].data.tm_mday<<'/'<<A[i].data.tm_mon<<'/'<<A[i].data.tm_year<<' '<<A[i].data.tm_hour<<" h ";
+       cout<<"A[i].data.tm_min<<" min "<<A[i].data.tm_sec<<" s."<<endl;
+    }cout<<endl;
+}
