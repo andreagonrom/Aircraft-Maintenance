@@ -30,6 +30,7 @@ while(opcio!='X'){
                break;
            case 'X':
                cout<<"Operacio finalitzada."<<endl;
+               break;
            default:
                cout<<"Opcio inexistent."<<endl;
                cout<<"Torna a intorduir una opcio."<<endl;
