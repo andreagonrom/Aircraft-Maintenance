@@ -19,9 +19,6 @@ void crear_per_teclat(avio a[N],int& dim){
       cin>>a[dim].data_sortida.dia;
       cin>>a[dim].data_sortida.mes;
       cin>>a[dim].data_sortida.any;
-      cin>>a[dim].data_sortida.hores;
-      cin>>a[dim].data_sortida.min;
-      cin>>a[dim].data_sortida.segons;
       cout<<"Preu del manteniment de l'avio: ";
       cin>>a[dim].preu;
       cout<<"Tecnic responsable de l'avio: ";
