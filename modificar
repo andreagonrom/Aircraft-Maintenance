@@ -1,0 +1,66 @@
+bool cerca(string codi, tAvions avions[N], int dim, int& posicio); //funcio cerca existeix avio i dona posicio
+void modificar(tAvions avions[N], string codi, int dim); //Accio modificar info avions
+
+//Accio modificar info avions
+
+void modificar(tAvions avions[N], string codi, int dim){
+	int opcio=1, pos;
+	if(cerca(codi, avions, dim, pos)){
+		while(opcio!=0){
+		cout<<"Que vols modificar d'avio amb codi: "<<codi<<" ?"<<endl;
+		cout<<"1- Hores de vol"<<endl;
+		cout<<"2- Estat manteniment"<<endl;
+		cout<<"3- Data estimada de sortida"<<endl; //si estat realitzat, data sortida agafada amb time.h
+		cout<<"4- Preu de manteniment"<<endl;
+		cout<<"5- Tecnic responsable"<<endl;
+		cout<<"0- Sortir"<<endl;
+		cin>>opcio;
+		switch(opcio){
+			case 1:
+				cout<<"Introdueix hores, minuts i segons de vol:"<<endl;
+				cin>>avions[dim].hores.h>>avions[dim].hores.m>>avions[dim].hores.s;
+				break;
+			case 2:
+				cout<<"Introdueix estat manteniment"<<endl;
+				cin>>avions[pos].estat;
+				//aCTUALITZAR API 
+				break;
+			
+			case 3:
+				cout<<"Introdueix nova data estimada de sortida (dia mes any)"<<endl;
+				cin>>avions[dim].sortida.dia>>avions[dim].sortida.mes>>avions[dim].sortida.any;
+				break;
+			
+			case 4:
+				cout<<"Introdueix actual preu de manteniment"<<endl;
+				cin>>avions[pos].preu;
+				break;
+			
+			case 5:
+				cout<<"Introdueix tecnic responsable de l'avio amb codi "<<codi<<endl;
+				getline(cin, avions[pos].tecnic);
+				break;
+			
+			case 0:
+				break;
+			
+		}
+	}
+	}else{
+		cout<<"Error, el codi introduit no existeix/correspon a cap avio en manteniment"<<endl;
+	}
+}
+
+bool cerca(string codi, tAvions avions[N], int dim, int& posicio){
+	int i=0;
+	bool trobat=false;
+	while(!trobat && i<dim){
+		if(codi==avions[i].codi){
+			trobat=true;
+			posicio=i;
+		}else{
+			i++;
+		}
+	}
+	return trobat;
+}
