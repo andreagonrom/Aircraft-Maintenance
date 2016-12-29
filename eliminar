@@ -1,0 +1,42 @@
+//Accio permet eliminar avions de la taula
+//Utilitza funcio cerca apareix a modificar
+/*
+bool cerca(string codi, tAvions avions[N], int dim, int& posicio){
+	int i=0;
+	bool trobat=false;
+	while(!trobat && i<dim){
+		if(codi==avions[i].codi){
+			trobat=true;
+			posicio=i;
+		}else{
+			i++;
+		}
+	}
+	return trobat;
+}
+*/
+
+void eliminar(tAvions avions[N], string codi, int& dim){
+	int i;
+	if(cerca(codi, avions, dim, i)){
+		for( ;i<dim; i++){ //depen si dim compta el 0 o no
+		avions[i].codi=avions[i+1].codi;
+		avions[i].model=avions[i+1].model;
+		avions[i].hores.h=avions[i+1].hores.h;
+		avions[i].hores.m=avions[i+1].hores.m;
+		avions[i].hores.s=avions[i+1].hores.s;
+		avions[i].estat=avions[i+1].estat;
+		avions[i].entrada.dia=avions[i+1].entrada.dia;
+		avions[i].entrada.mes=avions[i+1].entrada.mes;
+		avions[i].entrada.any=avions[i+1].entrada.any;
+		avions[i].sortida.dia=avions[i+1].sortida.dia;
+		avions[i].sortida.mes=avions[i+1].sortida.mes;
+		avions[i].sortida.any=avions[i+1].sortida.any;
+		avions[i].preu=avions[i+1].preu;
+		avions[i].tecnic=avions[i+1].tecnic;
+	}
+	dim=dim-1;
+	}else{
+		cout<<"Error, codi d'avio introduit no correspon a cap en manteniment"<<endl;
+	}
+}
