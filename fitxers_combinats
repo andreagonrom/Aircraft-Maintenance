@@ -1,0 +1,128 @@
+//fitxer entrada
+//suposem taula N avions
+
+#include <iostream>
+#include <fstream>
+#include <stdlib.h> //necessaria per poder utilitzar funcio atoi
+using namespace std;
+
+const int N=25;
+
+struct tData{
+	int dia;
+	int mes;
+	int any;
+};
+
+struct tTecnic{
+	string nom;
+	string cognom;
+	string DNI;
+};
+
+struct tAvions{
+	string codi;
+	string model;
+	int hores;
+	bool estat;
+	tData entrada;
+	tData sortida;
+	int preu;
+	tTecnic tecnic;
+};
+
+int main(){
+//TOT INCLOS AL MAIN
+int dim;
+tAvions avions[N];
+string linia; //fitxer llegit linia a linia
+ifstream avions_inicials("Dades.txt");
+if(avions_inicials.is_open()){
+	int i=0;
+	while(!avions_inicials.eof()){
+		//Llegim tots camps producte i guardem a posicio i de taula
+		getline(avions_inicials, linia, ';');
+		avions[i].codi=linia;
+		getline(avions_inicials, linia, ';');
+		avions[i].model=linia;
+		getline(avions_inicials, linia, ';');
+		avions[i].hores=atoi(linia.c_str());
+		getline(avions_inicials, linia, ';');
+		avions[i].estat=atoi(linia.c_str());
+		getline(avions_inicials, linia, ';');
+		avions[i].entrada.dia=atoi(linia.c_str());
+		getline(avions_inicials, linia, ';');
+		avions[i].entrada.mes=atoi(linia.c_str());
+		getline(avions_inicials, linia, ';');
+		avions[i].entrada.any=atoi(linia.c_str());
+		getline(avions_inicials, linia, ';');
+		avions[i].sortida.dia=atoi(linia.c_str());
+		getline(avions_inicials, linia, ';');
+		avions[i].sortida.mes=atoi(linia.c_str());
+		getline(avions_inicials, linia, ';');
+		avions[i].sortida.any=atoi(linia.c_str());
+		getline(avions_inicials, linia, ';');
+		avions[i].preu=atoi(linia.c_str());
+		getline(avions_inicials, linia, ';');
+		avions[i].tecnic.nom=linia;
+		getline(avions_inicials, linia, ';');
+		avions[i].tecnic.cognom=linia;
+		getline(avions_inicials, linia, ';');
+		avions[i].tecnic.DNI=linia;
+		//llegim seguent avio
+		i++;
+	}
+	dim=i-1;
+	cout<<"S'ha llegit "<<i-1<<" avions"<<endl;
+	avions_inicials.close();
+	//Comprovacio ben llegit i guardat
+	//NO NECESSARI AL NOSTRE PROGRAMA (else del final si)
+	//NO NECESSARI
+	
+	
+	for(i=0; i<dim; i++){
+		cout<<"Codi: "<<avions[i].codi<<endl;
+		cout<<"Model: "<<avions[i].model<<endl;
+		cout<<"Hores de vol: "<<avions[i].hores<<endl;
+		cout<<"Estat reparacio/manteniment: ";
+		if(avions[i].estat){
+			cout<<"Realitzat"<<endl;
+		}else{
+			cout<<"Pendent"<<endl;
+		}
+		cout<<"Data d'entrada: "<<avions[i].entrada.dia<<' '<<avions[i].entrada.mes<<' '<<avions[i].entrada.any<<endl;
+		cout<<"Data de sortida: "<<avions[i].sortida.dia<<' '<<avions[i].sortida.mes<<' '<<avions[i].sortida.any<<endl;
+		cout<<"Preu pel manteniment/reparacio: "<<avions[i].preu<<" euros"<<endl;
+		cout<<"Tecnic responsable: "<<avions[i].tecnic.nom<<' '<<avions[i].tecnic.cognom<<endl;
+		cout<<"        DNI: "<<avions[i].tecnic.DNI<<endl;
+		cout<<endl;
+	}
+}else{
+	cout<<"Fitxer no obert!"<<endl;
+}
+//TOT AIXO ERA FITXERS D'ENTRADA
+
+//PROGRAMA MAIN
+
+//AL FINAL OPCIO GUARDAR MODIFICACIONS (ordenacio, noves dades,...)
+
+ofstream avions_finals("sortida.txt"); //modificar "Dades" pel nom del fitxer on volem que es guardi informacio
+for(int i=0; i<dim; i++){
+	avions_finals<<avions[i].codi<<';'; //posem ; per separar caracters
+	avions_finals<<avions[i].model<<';';
+	avions_finals<<avions[i].hores<<';';
+	avions_finals<<avions[i].estat<<';';
+	avions_finals<<avions[i].entrada.dia<<';';
+	avions_finals<<avions[i].entrada.mes<<';';
+	avions_finals<<avions[i].entrada.any<<';';
+	avions_finals<<avions[i].sortida.dia<<';';
+	avions_finals<<avions[i].sortida.mes<<';';
+	avions_finals<<avions[i].sortida.any<<';';
+	avions_finals<<avions[i].preu<<';';
+	avions_finals<<avions[i].tecnic.nom<<';';
+	avions_finals<<avions[i].tecnic.cognom<<';';
+	avions_finals<<avions[i].tecnic.DNI<<';';
+}
+avions_finals.close();
+
+}
